@@ -9,28 +9,31 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #3e0bae;
-    color: black
-    ;
+    background-color: #f4f4f4;
+    color: #222;
 }
 
+
 /* HEADER */
+
 header {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
-    background-color: rgb(32, 117, 179);
+    padding: 1rem 2rem;
+    background-color: #222;
 }
 
 .logo {
-    width: 200px;
-    height: 200px;
+    width: 60px;
+    height: 60px;
 }
 
-/* NAVEGACION */
+
+/* NAVEGACIÓN */
+
 .nav {
     display: flex;
     align-items: center;
@@ -41,8 +44,9 @@ header {
     list-style: none;
     gap: 2rem;
 }
+
 .lista-nav a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 1rem;
     text-transform: uppercase;
@@ -52,13 +56,15 @@ header {
     text-decoration: underline;
 }
 
+
 /* BOTONES */
-.abrir-menu
+
+.abrir-menu,
 .cerrar-menu {
     border: none;
     background: transparent;
-    color: black;
-    font-size: 6px;
+    color: white;
+    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -70,17 +76,19 @@ header {
     display: none;
 }
 
+
 /* CONTENIDO */
+
 main {
     max-width: 1000px;
-    margin: 10px;
-    padding: 5px;
+    margin: auto;
+    padding: 2rem;
 }
 
 section {
     background-color: white;
-    margin-bottom: 2px;
-    padding: 2px;
+    margin-bottom: 1.5rem;
+    padding: 2rem;
     border-radius: 8px;
 }
 
@@ -88,19 +96,85 @@ section h1,
 section h2,
 section h3,
 section h4 {
-    margin-bottom: 1px;
+    margin-bottom: 1rem;
 }
+
 section p {
-    margin-bottom: 4px;
+    margin-bottom: 1rem;
 }
 
 section ul {
-    padding-left: 24px;
+    padding-left: 2rem;
 }
+
 
 /* ASIDE */
 
 aside {
     max-width: 1000px;
     margin: 0 auto 2rem;
+    padding: 2rem;
+    background-color: #ddd;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #222;
+    color: white;
+}
+
+footer address {
+    margin: 1rem 0;
+    font-style: normal;
+}
+
+
+/* MENÚ PARA DISPOSITIVOS PEQUEÑOS */
+
+@media screen and (max-width: 768px) {
+
+    .abrir-menu {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #222;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        padding: 2rem;
+
+        transition: right 0.3s ease;
+    }
+
+    .nav.visible {
+        right: 0;
+    }
+
+    .cerrar-menu {
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    .lista-nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.5rem;
+    }
+
+    .lista-nav a {
+        font-size: 1.2rem;
+    }
 }
